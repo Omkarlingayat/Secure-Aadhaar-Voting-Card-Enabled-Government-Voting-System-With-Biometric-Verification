@@ -1,0 +1,228 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3613), pid=10392, tid=9404
+#
+# JRE version:  (17.0.10+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.10+7, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+HeapDumpOnOutOfMemoryError -Xmx1024m -Dsts.lsp.client=vscode -Dsts.log.file=/dev/null -XX:TieredStopAtLevel=1 -Xlog:jni+resolve=off -Dspring.config.location=file:c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\classes\application.properties org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+
+Host: Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Fri Mar  1 12:08:57 2024 India Standard Time elapsed time: 0.021500 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001de5ce3bf10):  JavaThread "Unknown thread" [_thread_in_vm, id=9404, stack(0x0000005e08000000,0x0000005e08100000)]
+
+Stack: [0x0000005e08000000,0x0000005e08100000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67d2c9]
+V  [jvm.dll+0x834afa]
+V  [jvm.dll+0x8365be]
+V  [jvm.dll+0x836c23]
+V  [jvm.dll+0x2477ff]
+V  [jvm.dll+0x67a109]
+V  [jvm.dll+0x66eb7a]
+V  [jvm.dll+0x30764b]
+V  [jvm.dll+0x30eaf6]
+V  [jvm.dll+0x35e83e]
+V  [jvm.dll+0x35ea6f]
+V  [jvm.dll+0x2de248]
+V  [jvm.dll+0x2df1b4]
+V  [jvm.dll+0x806361]
+V  [jvm.dll+0x36c6f1]
+V  [jvm.dll+0x7e4e06]
+V  [jvm.dll+0x3eff3f]
+V  [jvm.dll+0x3f1b71]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17344]
+C  [ntdll.dll+0x526b1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffea8aeee98, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001de5ce77140 GCTaskThread "GC Thread#0" [stack: 0x0000005e08100000,0x0000005e08200000] [id=6100]
+  0x000001de5ce80090 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000005e08200000,0x0000005e08300000] [id=12512]
+  0x000001de5ce80ab0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000005e08300000,0x0000005e08400000] [id=8256]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffea82aec87]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001de5ce38710] Heap_lock - owner thread: 0x000001de5ce3bf10
+
+Heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000c0000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffea8696fb9]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.012 Loaded shared library c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff78d1c0000 - 0x00007ff78d1ce000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\java.exe
+0x00007fff0f5d0000 - 0x00007fff0f7c8000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff0f4d0000 - 0x00007fff0f58d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff0d270000 - 0x00007fff0d566000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff0a570000 - 0x00007fff0a600000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007fff0cd50000 - 0x00007fff0ce50000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff071a0000 - 0x00007fff071b7000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\jli.dll
+0x00007fff0de20000 - 0x00007fff0dfbe000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff0cd20000 - 0x00007fff0cd42000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff0ec10000 - 0x00007fff0ec3b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff0ce50000 - 0x00007fff0cf67000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff0d570000 - 0x00007fff0d60d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff05580000 - 0x00007fff0559b000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\VCRUNTIME140.dll
+0x00007fff02440000 - 0x00007fff026da000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5\COMCTL32.dll
+0x00007fff0edb0000 - 0x00007fff0ee4e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff0dbc0000 - 0x00007fff0dbf2000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff083d0000 - 0x00007fff083dc000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\vcruntime140_1.dll
+0x00007fff00070000 - 0x00007fff000fd000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\msvcp140.dll
+0x00007ffea7fc0000 - 0x00007ffea8c22000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\server\jvm.dll
+0x00007fff0ecf0000 - 0x00007fff0eda3000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff0d6c0000 - 0x00007fff0d75f000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff0da90000 - 0x00007fff0dbb6000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff0d1f0000 - 0x00007fff0d217000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007fff0c1e0000 - 0x00007fff0c22b000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007fff03a20000 - 0x00007fff03a47000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff02bf0000 - 0x00007fff02bf9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff0e450000 - 0x00007fff0e4bb000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff04db0000 - 0x00007fff04dba000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff0c0a0000 - 0x00007fff0c0b2000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007fff0ab40000 - 0x00007fff0ab52000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fff08050000 - 0x00007fff0805a000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\jimage.dll
+0x00007ffef97e0000 - 0x00007ffef99c4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffef95a0000 - 0x00007ffef95d4000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fff0cc90000 - 0x00007fff0cd12000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffef3e60000 - 0x00007ffef3e85000 	c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5;c:\Users\Ganesha\.vscode\extensions\redhat.java-1.28.1-win32-x64\jre\17.0.10-win32-x86_64\bin\server
+
+VM Arguments:
+jvm_args: -XX:+HeapDumpOnOutOfMemoryError -Xmx1024m -Dsts.lsp.client=vscode -Dsts.log.file=/dev/null -XX:TieredStopAtLevel=1 -Xlog:jni+resolve=off -Dspring.config.location=file:c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\classes\application.properties 
+java_command: org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+java_class_path (initial): c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\classes;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\annotations-24.1.0.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\antlr4-runtime-4.11.1.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\asm-9.6.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\asm-analysis-9.6.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\asm-tree-9.6.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\asm-util-9.6.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\caffeine-3.1.8.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\checker-qual-3.12.0.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\classgraph-4.8.149.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\commons-codec-1.16.0.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\commons-compress-1.25.0.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\commons-io-2.4.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\commons-java-1.52.0-SNAPSHOT.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\commons-lang3-3.13.0.jar;c:\Users\Ganesha\.vscode\extensions\vmware.vscode-spring-boot-1.52.0\language-server\BOOT-INF\lib\commons-language-server-1.52.0-SNAPSHOT.jar;c:\Users\Ganesha\.vscode\extensions\vmware.
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+     bool HeapDumpOnOutOfMemoryError               = true                                   {manageable} {command line}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1073741824                                {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1073741824                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning,jni+resolve=off uptime,level,tags (reconfigured)
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\Program Files\Git\bin\git.exe;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Ganesha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Ganesha\AppData\Local\Programs\Python\Python311\;C:\Program Files\Java\jdk-17\bin;C:\Users\Ganesha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ganesha\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\bin;;C:\Users\Ganesha\AppData\Roaming\npm;C:\Users\Ganesha\AppData\Local\Programs\Hyper\resources\bin;C:\apache-maven-3.8.6\bin;C:\Program Files\Java\jdk-17bin;C:\Windows\System32;C:\Users\Ganesha\AppData\Local\Android\Sdk\platform-tools;
+USERNAME=Ganesha
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+TMP=C:\Users\Ganesha\AppData\Local\Temp
+TEMP=C:\Users\Ganesha\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+OS uptime: 5 days 12:24 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4 microcode 0x2d, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush
+Processor Information for all 4 processors :
+  Max Mhz: 2201, Current Mhz: 2201, Mhz Limit: 2201
+
+Memory: 4k page, system-wide physical 8102M (456M free)
+TotalPageFile size 23227M (AvailPageFile size 110M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 46M, peak: 174M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.10+7) for windows-amd64 JRE (17.0.10+7), built on Jan 16 2024 23:25:11 by "admin" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
